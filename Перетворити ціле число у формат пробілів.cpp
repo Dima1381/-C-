@@ -29,13 +29,13 @@ int binary_number(int num)
 
 void foo_reincarnation(int bin_num, char* str)
 {
-	int count = -1; // кількість цифр (бітів)
+	int count = -1; 
 	for (int i = bin_num; i != 0; i /= 10)
 	{
 		count++;
 	}
 
-	int bit_rate = 1; // для доступу до старшого розряду
+	int bit_rate = 1; 
 	for (int i = 1; i <= count; i++)
 	{
 		bit_rate *= 10;
