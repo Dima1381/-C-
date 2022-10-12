@@ -1,95 +1,58 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
-
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h> 
-#include <sstream> 
+#include <string>
 
 using namespace std;
 
-int binary_number(int num)
+void reincarnation(int num, string& str)
 {
-	int bin = 0;
-	for (int temp = num; temp > 0; temp = temp / 2)
-	{
-		if (temp & num)
-		{
-			bin = bin * 10;
-			bin += 1;
-		}
-		else
-		{
-			bin = bin * 10;
-			bin += 0;
-		}
-	}
-	return bin;
-}
+  for (int i = 31; i >= 0; i--)
+  {
+    if ((num & (1 << i)))
+    {
+      for (int j = i; j >= 0; j--)
+      {
+        if ((num & (1 << j)))
+        {
+          str += "/t";
+        }
+        else
+        {
+          str += " ";
+        }
+      }
+      break;
+    }
 
-void foo_reincarnation(int bin_num, char* str)
-{
-	int count = -1; // кількість цифр (бітів)
-	for (int i = bin_num; i != 0; i /= 10)
-	{
-		count++;
-	}
-
-	int bit_rate = 1; // для доступу до старшого розряду
-	for (int i = 1; i <= count; i++)
-	{
-		bit_rate *= 10;
-	}
-
-	int temp; 
-	while (bit_rate >= 1)
-	{
-		temp = bin_num / bit_rate;
-
-		if (temp == 1)
-		{
-			strcat(str, "/t");
-		}
-		if (temp == 0)
-		{
-			strcat(str, " ");
-		}
-		bin_num = bin_num % bit_rate;
-		bit_rate /= 10;
-	}
+  }
 }
 
 int main()
 {
-	int num;
-	cin >> num;
-	char str[30] = {};
-	int second_num = num;
+  int num;
+  cin >> num;
+  string str = "";
 
-	if (second_num < 0)
-	{
-		second_num = second_num * (-1);
-		strcat(str, "/t");
-	}
-	else if (second_num > 0)
-	{
-		strcat(str, " ");
-	}
-	else if (second_num == 0)
-	{
-		strcat(str, "/n");
-		cout << str;
-		return 0;
-	}
+  if (num < 0)
+  {
+    num = num * (-1);
+    str += "/t";
+  }
+  else if (num > 0)
+  {
+    str += " ";
+  }
+  else if (num == 0)
+  {
+    str += "/n";
+    cout << str;
+    return 0;
+  }
 
-	int bin_num = binary_number(second_num);
-	
-	foo_reincarnation(bin_num, str);
+  reincarnation(num, str);
 
-	strcat(str, "/n");
-	
-	cout << str;
-	return 0;
+  str += "/n";
+  cout << str;
+
+  return 0;
 }
-
-
 
