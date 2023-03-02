@@ -1,0 +1,72 @@
+1. Print an arbitrary number in the binary number system.
+
+Description
+Write a function that accepts an arbitrary integer value as input and returns a string containing its representation in the binary calculation system.
+
+Declaration.
+voidNumberAsBinary(
+char* _result, // string with the result
+unsignedint _number// arbitrary number
+)
+
+Expected result.
+For example, for the number 13, this function should return the string "1101".
+
+Checking the work.
+The solution should demonstrate the operation of the function from the example of 10 random numbers in the range 0 to 512.
+
+
+2. Generate an unordered array of integers from 1 to N.
+
+Description
+Write a function that accepts an arbitrary integer value as input and returns an array containing a sequence of numbers from 1 to this value, in which each number in the sequence is in a random position.
+
+Declaration.
+void GenerateRandomArray(
+int * _result, // an array is returned
+unsignedint _maxValue// the maximum number in the sequence
+)
+
+Expected result.
+For example, 2 consecutive runs of this function with parameter 7 can generate sequences of the form
+{2, 5, 7, 3, 4, 1, 6}
+{5, 1, 3, 4, 6, 2, 7}
+
+Checking the work.
+The solution should demonstrate the operation of the function from example 4 with random numbers in the range from 5 to 15.
+
+
+3. Array sorting.
+
+Description
+Write a function that takes as a parameter an array of unordered integers (generated using the function from task 2) and performs its sorting.
+
+Declaration.
+voidSort(
+int* _values,// sorted array
+unsignedint _count// number of elements in the array
+)
+
+Expected result.
+For example, an array of the form {2, 5, 7, 3, 4, 1, 6} will be transformed by this function {1, 2, 3, 4, 5, 6, 7}.
+
+Checking the work.
+The solution should demonstrate the operation of the function on the example of the results obtained when solving problem 2 (sequences generated for 4 random numbers in the range from 5 to 15).
+
+
+4. Determine the insufficient number in an unordered sequence of integers.
+
+Description
+Write a function that takes as a parameter an array of unordered integers (generated using the function from task 2) and the determining value of the last element in the array without accessing it.
+
+Declaration.
+intGetMissingValue(
+constint * _values, // unordered array of integers from 1 to _count
+unsignedint _count// number of elements in the array
+)
+
+Expected result.
+For example, for the sequence {5, 7, 8,3, 1, 9, 2, 6, 4}, this function should return 4.
+
+Checking the work.
+The solution should demonstrate the operation of the functions on the example of the results obtained when solving problem 2 (sequences generated for 4 random numbers in the range from 5 to 15).

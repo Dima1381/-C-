@@ -1,0 +1,16 @@
+The first character denotes a sign: [space]plus, [tab]minus;
+the characters after that are the binary representation of the absolute value of the number, where [space]for 0, [tab]for 1 the rightmost bit is the least significant bit, with no leading zero bits.
+the binary representation is immediately followed by [LF].
+
+Notes
+A valid whitespace number must always contain at least two characters: a sign and a terminator. If there are only two characters, the number is zero.
+Zero must always be represented as [space][LF].
+In spaces, the only significant characters are space, tab, and line feed. All other characters are ignored.
+The input will always be a real negative or positive integer.
+
+Examples
+1 space has " \t\n".
+0 spaces have " \n".
+-1 space has "\t\t\n".
+2 spaces have " \t \n".
+-3 spaces have "\t\t\t\n".
